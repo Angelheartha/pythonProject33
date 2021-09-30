@@ -1,0 +1,22 @@
+{% extends "base_generic.html" %}
+
+{% load static %}
+<link rel="stylesheet" href="{% static 'css/styles.css' %}">
+
+{% load static %}
+<img src="{% static
+'https://otakei.otakuma.net/wp/wp-content/uploads/2021/07/ponko4.jpg'  %}" alt="hamuster">
+
+{% block content %}
+  <hr>
+  <h1>TEAM HAMUSTER</h1>
+  <p><em>Japasease stories-Hebrew stories-English stories</em></p>
+  <h2>Content</h2>
+  <p>All the materia that you can find out at this moment</p>
+  <ul>
+    <li><strong>Books:</strong> {{ num_books }}</li>
+    <li><strong>Copies:</strong> {{ num_instances }}</li>
+    <li><strong>Copies available:</strong> {{ num_instances_available }}</li>
+    <li><strong>Authors:</strong> {{ num_authors }}</li>
+  </ul>
+{% endblock %}
