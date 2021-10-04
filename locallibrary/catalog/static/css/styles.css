@@ -5,9 +5,9 @@
 }
 
 body{
-background:red
-url("images/po.png")no-
-repeat;
+background:pink;
+background-image: url("images/background.gif");
+background-repeat: no-repeat;
 }
 
 

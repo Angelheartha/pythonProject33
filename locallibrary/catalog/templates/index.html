@@ -2,16 +2,17 @@
 {% load static %}
 <link rel="stylesheet" href="{% static 'css/styles.css' %}">
 
-
-{% load static %}
-<img src="{% static 'images/hamu.jpg' %}" alt="mu">
-
 {% block content %}
+<img src="{% static 'images/images.jpg' %}" alt="mu">
   <hr>
   <h1>TEAM HAMUSTER</h1>
-  <p><em>Japasease stories-Hebrew stories-English stories</em></p>
+  <table><em>
+    <tr><td>Japasease stories</td></tr>
+    <tr><td>Hebrew stories</td></tr>
+    <tr><td>English stories</td></tr>
+  </em></table>
   <h2>Content</h2>
-  <p>All the materia that you can find out at this moment</p>
+  <p>Study and be hamuster!</p>
   <ul>
     <li><strong>Books:</strong> {{ num_books }}</li>
     <li><strong>Copies:</strong> {{ num_instances }}</li>
