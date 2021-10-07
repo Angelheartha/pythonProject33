@@ -2,11 +2,11 @@
 
 {% block content %}
   {% load static %}
-  <img src="{% static 'images/london-bridge.jpg' %}" alt="mu">
-  <h1>Bk List</h1>
-  {% if bk_list %}
+  <img src="{% static 'images/R (4).jpg' %}" alt="mu">
+  <h1>Book List</h1>
+  {% if book_list %}
   <ul>
-    {% for book in bk_list %}
+    {% for book in book_list %}
       <li>
         <a href="{{ book.get_absolute_url }}">{{ book.title }}</a> ({{book.author}})
       </li>
