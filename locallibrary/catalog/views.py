@@ -36,6 +36,7 @@ class BokListView(generic.ListView):
 
 class BokDetailView(generic.ListView):
     model = Book
+    data = Book.objects.order_by('-booK.summary')
 
 
 class BkListView(generic.ListView):
