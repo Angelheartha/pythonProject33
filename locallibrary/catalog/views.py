@@ -2,7 +2,7 @@ from django.shortcuts import render
 from .models import Book, Author, BookInstance, Genre
 from django.views import generic
 from django.contrib.auth.mixins import LoginRequiredMixin
-
+from django.shortcuts import get_object_or_404
 
 def index(request):
 
@@ -32,11 +32,16 @@ class BookDetailView(generic.ListView):
 class BokListView(generic.ListView):
     model = Book
     template_name = "catalog/bok_list.html"
-    queryset = Book.objects.filter(language__name__icontains='Japanese')
+
+    def get_queryset(self):
+        queryset = Book.objects.filter(language__name__icontains='int:pk')
+        self.request.book.summary= get_object_or_404(Book, name=self.kwargs['int:pk'])
+        return Book.objects.filter(book=self.request.book.summary)
+
 
 class BokDetailView(generic.ListView):
     model = Book
-    data = Book.objects.order_by('-booK.summary')
+
 
 
 class BkListView(generic.ListView):
