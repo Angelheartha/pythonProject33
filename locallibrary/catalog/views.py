@@ -35,8 +35,8 @@ class BokListView(generic.ListView):
 
     def get_queryset(self):
         queryset = Book.objects.filter(language__name__icontains='Japanese')
-        self.request.book = get_object_or_404(Book, summary=self.kwargs['book'])
-        return Book.objects.filter(book=self.request.book)
+        self.summary = get_object_or_404(Book, summary=self.kwargs['summary'])
+        return Book.objects.filter(summary=self.summary)
 
 
 class BokDetailView(generic.ListView):
